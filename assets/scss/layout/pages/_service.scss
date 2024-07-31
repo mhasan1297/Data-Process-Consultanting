@@ -1,0 +1,51 @@
+@use '../../utils' as *;
+
+.service {
+
+  &__item {
+    @extend %rr-transition-3;
+    padding: 50px 50px 60px 40px;
+    @include border-radius(10px);
+    border: 1px solid rgba(1, 9, 21, 0.1);
+
+    @media #{$xs, $sm, $md} {
+      padding: 45px 30px;
+    }
+
+    &-icon {
+      max-width: 66px;
+    }
+
+    &-readmore {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      gap: 10px;
+      line-height: 19px;
+      align-items: center;
+      color: var(--rr-heading-primary, #010915);
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        @include border-radius(500px);
+        border: 1px solid rgba(1, 9, 21, 0.14);
+
+        i {
+          font-size: 17px;
+        }
+      }
+
+      &:hover {
+        span {
+          background: var(--rr-theme-primary);
+          color: var(--rr-common-white);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use '../../utils' as *;
+
+.our-procedure {
+
+  &__tab {
+    border: none;
+
+    li {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .nav-link {
+      padding: 28px 20px;
+      padding-right: 50px;
+      gap: 18px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(1, 9, 21, 0.1);
+      @include border-radius(10px);
+
+      &.active {
+        box-shadow: 0px 10px 120px rgba(11, 23, 40, 0.2);
+        background: var(--rr-common-white);
+        border-color: transparent;
+      }
+
+      .number {
+        @include border-radius(500px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        border: 1px solid rgba(1, 9, 21, 0.14);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 60px;
+        color: rgb(1 9 21 / 50%);
+      }
+
+      .text {
+
+        .h5 {
+          margin-bottom: 10px;
+        }
+
+        .p {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 26px;
+          color: var(--rr-heading-primary, #010915);
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

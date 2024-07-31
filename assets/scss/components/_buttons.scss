@@ -1,0 +1,185 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.3 buttons
+/*----------------------------------------*/
+
+// Common button
+.rr-btn__header {
+    @include border-radius(500px);
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    padding: 10.5px 29.5px;
+    background-color: var(--rr-theme-primary);
+    color: var(--rr-common-white);
+    font-family: var(--rr-common-white);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+
+    &:after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+
+    .btn-wrap {
+        z-index: 1;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border: none;
+
+        .text-one, .text-two {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-one {
+            position: relative;
+            display: block;
+            color: var(--rr-common-white);
+            @extend %rr-transition-3;
+        }
+
+        .text-two {
+            position: absolute;
+            top: 100%;
+            display: block;
+            color: var(--rr-common-white);
+            @extend %rr-transition-3;
+        }
+    }
+
+    &:hover, &:focus {
+        .text-one {
+            @include transform(translateY(-150%));
+        }
+        .text-two {
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+    }
+
+    &-secondary {
+        padding: 10.5px 28px;
+        background: var(--rr-theme-secondary);
+    }
+
+    &-space-2 {
+        padding: 10.5px 34.5px;
+
+        .btn-wrap {
+            .text-one, .text-two {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.rr-btn {
+    @include border-radius(500px);
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+    padding: 13.5px 41px;
+    background-color: var(--rr-theme-primary);
+    color: var(--rr-common-white);
+    font-family: var(--rr-common-white);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 23px;
+    display: inline-flex;
+    align-items: center;
+    text-transform: capitalize;
+
+    &:after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+
+    .btn-wrap {
+        z-index: 1;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        border: none;
+
+        .text-one, .text-two {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-one {
+            position: relative;
+            display: block;
+            color: var(--rr-common-white);
+            @extend %rr-transition-3;
+        }
+
+        .text-two {
+            position: absolute;
+            top: 100%;
+            display: block;
+            color: var(--rr-common-white);
+            @extend %rr-transition-3;
+        }
+    }
+
+    &__secondary {
+        padding: 13.5px 27.5px;
+        background-color: var(--rr-theme-secondary);
+    }
+
+    &__lg {
+        padding: 14px 33.5px;
+    }
+
+    &__xl {
+        padding: 13.5px 37px;
+    }
+
+    &__xxl {
+        padding: 13.5px 41px;
+    }
+
+    &__fw-bold {
+        .btn-wrap {
+            .text-one, .text-two {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__white {
+        padding: 13.5px 29.5px;
+        background-color: var(--rr-common-white);
+
+        .btn-wrap {
+            .text-one, .text-two {
+                color: var(--rr-heading-primary);
+            }
+        }
+    }
+
+    &:hover, &:focus {
+        .text-one {
+            @include transform(translateY(-150%));
+        }
+        .text-two {
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+    }
+}

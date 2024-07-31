@@ -1,0 +1,112 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  5.1 blog
+/*----------------------------------------*/
+.blog {
+
+  &__slider-dot {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+    z-index:1;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      width: 16px;
+      height:16px;
+      padding: 0;
+      margin: 0 !important;
+      @include border-radius(500px);
+      overflow: hidden;
+      background: transparent;
+      display: flex;
+      position: relative;
+      border: 1px solid var(--rr-heading-primary);
+      @extend %rr-transition-3;
+      opacity: 1;
+
+      &-active {
+        border-color: transparent;
+        background: rgba(1, 9, 21, 0.2);
+      }
+    }
+  }
+
+  &__item {
+    gap: 30px;
+    padding: 24px;
+    padding-right: 30px;
+    background: var(--rr-common-white);
+    box-shadow: 0px 2px 2px rgba(8, 23, 46, 0.2);
+    @include border-radius(12px);
+    @media #{$xs, $sm, $md, $lg} {
+      padding-right: 24px;
+    }
+
+    &-media {
+      position: relative;
+      overflow: hidden;
+      @include border-radius(10px);
+      width: 276px;
+      min-width: 276px;
+      height: 100%;
+
+      @media #{$xs, $sm, $md, $lg} {
+        width: 100%;
+        min-width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @extend %rr-transition-3;
+      }
+    }
+
+    &-date {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 10px;
+      color: var(--rr-heading-secondary);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+      i {
+        font-size: 15px;
+      }
+    }
+
+    &-readmore {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      color: var(--rr-heading-primary);
+    }
+
+     &-title {
+       a {
+         &:hover {
+           color: var(--rr-theme-secondary);
+         }
+       }
+       &.color-hover-theme-primary a:hover {
+         color: var(--rr-theme-primary);
+       }
+     }
+
+    &:hover {
+      .blog__item-media {
+
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  9.3 banner Style 1
+/*----------------------------------------*/
+.banner-3 {
+
+    @media (min-width: 1400px) {
+        .container,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl,
+        .container-xxl {
+            max-width: 1630px;
+        }
+    }
+
+    &__bg {
+        background-color: #EEF1F6;
+    }
+
+    &__shape-1 {
+        top: -711px;
+        @include transform(rotate(38.89deg));
+        width: 1004px;
+        height: 1004px;
+        left: -226px;
+        background: #E1E7F0;
+    }
+
+    &__space {
+        padding-top: 180px;
+        padding-bottom: 200px;
+
+        @media #{$xl} {
+            padding-top: 160px;
+            padding-bottom: 180px;
+        }
+        @media #{$lg} {
+            padding-top: 150px;
+            padding-bottom: 160px;
+        }
+        @media #{$md} {
+            padding-top: 120px;
+            padding-bottom: 140px;
+        }
+        @media #{$sm} {
+            padding-top: 100px;
+            padding-bottom: 120px;
+        }
+        @media #{$xs} {
+            padding-top: 80px;
+            padding-bottom: 100px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 80px;
+        color: var(--rr-heading-primary, #010915);
+
+        span {
+            position: relative;
+            color: var(--rr-theme-primary);
+
+            &:after {
+                width: 100%;
+                height: 7%;
+                content: "";
+                left: 0;
+                bottom: 0;
+                position: absolute;
+                background: var(--rr-theme-primary);
+            }
+        }
+
+        @media #{$lg} {
+            font-size: 52px;
+            line-height:64px;
+        }
+        @media #{$md} {
+            font-size: 50px;
+            line-height:52px;
+        }
+        @media #{$sm} {
+            font-size: 38px;
+            line-height:50px;
+        }
+        @media #{$xs} {
+            font-size: 32px;
+            line-height:44px;
+        }
+    }
+
+    &__subtitle {
+        font-weight: var(--rr-fw-medium);
+        font-style: normal;
+        font-size: 20px;
+        line-height: 24px;
+        color: rgba(1, 9, 21, 0.8);
+
+        @media #{$md, $sm, $xs} {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    &__text {
+        p {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 26px;
+            color: var(--rr-heading-secondary);
+        }
+    }
+
+    &__content {
+
+        &-link {
+            gap: 30px;
+        }
+
+        .rr-btn.rr-btn__white {
+            padding: 13.5px 32px;
+            position: relative;
+            z-index: 1;
+            background: var(--rr-common-white, #FFFFFF);
+            box-shadow: 0px 2px 8px rgba(29, 29, 29, 0.24);
+            @include border-radius(50px);
+
+
+            .btn-wrap  {
+                .text-one, .text-two {
+                    display: flex;
+                    align-items: center;
+                    font-weight: 700;
+                    &:after {
+                        display: none;
+                    }
+
+                    i {
+                        font-size: 18px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        .rr-btn__popup-video {
+            width: 90px;
+            height: 90px;
+            background: var(--rr-theme-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include border-radius(500px);
+            border: 18px solid #BAD0F7;
+
+            &.animate-play {
+                &:before, &:after {
+                    z-index: 0;
+                    border-color: rgb(96 0 255 / 50%);
+                }
+            }
+        }
+    }
+
+    &__media {
+        position: absolute;
+        left: 73px;
+        bottom: -200px;
+
+        @media #{$xxl} {
+            left: 151px;
+            bottom: -75px
+        }
+        @media #{$xl} {
+            left: 151px;
+            bottom: 12px;
+        }
+
+        @media #{$lg, $md, $sm, $xs} {
+            position: inherit;
+            left: inherit;
+            margin-top: 30px;
+            bottom: inherit;
+            margin-left: -162px;
+        }
+
+        img {
+            @media #{$xxl} {
+                max-width: 1300px;
+            }
+            @media #{$xl} {
+                max-width: 1200px;
+            }
+
+            @media #{$lg, $md, $sm, $xs} {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

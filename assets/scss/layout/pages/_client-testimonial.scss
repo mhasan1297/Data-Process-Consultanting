@@ -1,0 +1,126 @@
+@use '../../utils' as *;
+
+.client-testimonial {
+
+  &__based-review {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: rgba(1, 9, 21, 0.8);
+    background: var(--rr-common-white);
+    box-shadow: 0px 1px 2px rgba(29, 29, 29, 0.14);
+    @include border-radius(50px);
+    padding: 6px 21.5px;
+  }
+
+  &__item {
+    padding: 42px 50px 55px 40px;
+    border: 1px solid rgba(1, 9, 21, 0.1);
+    @include border-radius(10px);
+    @extend %rr-transition-3;
+
+    @media #{$xs} {
+      padding: 35px 40px;
+    }
+
+    &-author {
+      gap: 14px;
+
+      &-thumb {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        min-height: 56px;
+        overflow: hidden;
+        @include border-radius(500px);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1;
+        color: var(--rr-heading-primary);
+      }
+
+      &-date {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 0;
+        color: rgba(1, 9, 21, 0.6);
+      }
+    }
+
+    &-header {
+      gap: 30px;
+    }
+
+    &-rating {
+      gap: 4.5px;
+      list-style: none;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 26px;
+      color: var(--rr-heading-primary);
+      opacity: 0.6;
+    }
+
+    &:hover {
+      background: var(--rr-common-white);
+    }
+  }
+
+  &__slider {
+
+    .swiper-slide-active {
+      .client-testimonial__item {
+        box-shadow: 0px 10px 120px rgba(11, 23, 40, 0.2);
+      }
+    }
+
+    &__arrow {
+      display: flex;
+      gap: 10px;
+
+      &-prev, &-next {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 12px;
+        line-height: 12px;
+        display: flex;
+        align-items: center;
+        color: var(--rr-heading-primary);
+        width: 50px;
+        @include border-radius(500px);
+        height: 50px;
+        border: 1px solid rgba(1, 9, 21, 0.1);
+
+
+        &:hover, &:focus {
+          background: var(--rr-theme-primary);
+          color: var(--rr-common-white);
+        }
+      }
+    }
+  }
+}
+
+.mb-minus-120 {
+  margin-bottom: -120px;
+}
+.mt-minus-120 {
+  margin-top: -120px;
+}

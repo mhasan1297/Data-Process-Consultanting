@@ -1,0 +1,30 @@
+$colors: (
+  common: (
+    "white": #FFFFFF,
+    "white-70": rgb(255 255 255 / 70%),
+    "black": #000000,
+    "placeholder": #4A5764,
+    "selection": #3C66FA,
+  ),
+  color: (
+    "white" : #fff,
+  ),
+  body: (
+    "primary": #ffffff,
+  ),
+  theme: (
+    "primary": #6000FF,
+    "secondary": #F3682D,
+  ),
+  heading: (
+    "primary": #010915,
+    "secondary": rgb(1 9 21 / 70%),
+  ),
+  text: (
+    "body": #808589,
+    "p": #808589,
+  ),
+  menu: (
+    "primary": rgb(1 9 21 / 70%),
+  )
+);

@@ -1,0 +1,82 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.3 footer-copyright
+/*----------------------------------------*/
+// Footer bottom style
+.footer-3 {
+
+	&__bottom-wrapper {
+		padding: 37px 0;
+	}
+
+	&__copyright {
+		p {
+			font-style: normal;
+			font-size: 16px;
+			line-height: 26px;
+			color: var(--rr-common-white, #FFFFFF);
+			opacity: 0.7;
+			font-weight: 500;
+
+			a {
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__copyright-menu {
+		ul {
+			@include flexbox;
+			gap: 20px;
+			justify-content: end;
+			@media #{$xs, $sm, $md} {
+				gap: 15px;
+				flex-wrap: wrap;
+				margin-top: 10px;
+				justify-content: center;
+			}
+
+			li {
+				list-style: none;
+				position: relative;
+
+				&::before {
+					content: "";
+					right: -10px;
+					width: 1px;
+					height: 16px;
+					opacity: 0.6;
+					position: absolute;
+					top: calc(50% + 0.5px);
+					@extend %rr-transition-3;
+					transform: translateY(-50%);
+					background-color: var(--rr-common-white);
+				}
+
+				&.no_bullet {
+					&:before {
+						display: none;
+					}
+				}
+
+				a {
+					color: var(--rr-common-white, #FFFFFF);
+					font-style: normal;
+					font-weight: 500;
+					font-size: 16px;
+					line-height: 26px;
+					opacity: 0.7;
+
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+

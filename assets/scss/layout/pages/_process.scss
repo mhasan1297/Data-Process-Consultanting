@@ -1,0 +1,113 @@
+@use '../../utils' as *;
+
+.process  {
+
+  .description {
+    padding-left: 80px;
+    color: rgb(1 9 21 / 70%);
+
+    @media #{$lg, $md, $sm, $xs} {
+      padding-left: 0;
+    }
+  }
+
+  &__item {
+
+    &.has--item-2 {
+      margin-top: 40px;
+    }
+    &.has--item-3 {
+      margin-top: 80px;
+
+      @media #{$lg, $md, $sm, $xs} {
+        margin-top: 40px;
+      }
+    }
+    &.has--item-4 {
+      margin-top: 120px;
+
+      @media #{$lg, $md, $sm, $xs} {
+        margin-top: 40px;
+      }
+    }
+
+    &-border {
+      position: relative;
+      @extend %rr-transition-3;
+      width: calc(100% - 40px);
+      border-top: 1px solid rgb(1 9 21 / 16%);
+      margin-bottom: 45px;
+
+      &::before {
+        left: 0;
+        width: 5px;
+        top: -3px;
+        height: 5px;
+        content: "";
+        position: absolute;
+        @extend %rr-transition-3;
+        @include border-radius(500px);
+        background: rgb(1 9 21 / 16%);
+      }
+
+      span {
+        top: -20px;
+        width: 40px;
+        height: 40px;
+        right: -40px;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        @extend %rr-transition-3;
+        @include border-radius(500px);
+        font-weight: var(--rr-fw-bold);
+        color: var(--rr-heading-primary);
+        border: 1px solid rgb(1 9 21 / 16%);
+      }
+    }
+
+    &-title {
+      margin-bottom: 19px;
+      font-weight: var(--rr-fw-bold);
+    }
+
+    p {
+      max-width: 269.4px;
+      color: rgb(1 9 21 / 60%);
+    }
+
+    &:hover {
+
+      .process__item {
+
+        &-border {
+          border-color: var(--rr-theme-secondary, #F3682D);
+
+          &::before {
+            background: var(--rr-theme-secondary, #F3682D);
+          }
+
+          span {
+            background: var(--rr-theme-secondary, #F3682D);
+            border-color: transparent;
+            color: var(--rr-common-white);
+          }
+        }
+      }
+
+    }
+
+    &-secondary:hover {
+      .process__item-border {
+          border-color: var(--rr-theme-primary);
+        &::before {
+          background: var(--rr-theme-primary);
+        }
+        span {
+          background: var(--rr-theme-primary);
+        }
+      }
+    }
+  }
+}

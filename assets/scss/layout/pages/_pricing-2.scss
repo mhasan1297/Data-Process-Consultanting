@@ -1,0 +1,219 @@
+@use '../../utils' as *;
+
+.pricing-2 {
+
+  .section {
+
+    &__title-wrapper {
+      max-width: 774px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .has--top-title {
+    margin-top: -20px;
+    background: #F3682D;
+    border-radius: 16px 16px 0px 0px;
+    font-size: 18px;
+    font-weight: var(--rr-fw-medium);
+    color: var(--rr-common-white);
+    text-align: center;
+    position: relative;
+    z-index: 9;
+    padding: 11px;
+
+    @media #{$xs, $sm} {
+      margin-top: 0;
+    }
+  }
+
+  &__card {
+    padding: 45px 50px 50px;
+    @include border-radius(16px);
+    background: var(--rr-common-white);
+    box-shadow: 0px 2px 2px rgba(8, 23, 46, 0.2);
+
+    @media #{$md} {
+      padding: 40px 30px;
+    }
+    @media #{$xs} {
+      padding: 30px 20px;
+    }
+
+    &.pro-plan {
+      background-color: var(--rr-heading-primary);
+      border-radius: 0px 0px 16px 16px;
+      margin-top: -20px;
+      .pricing-2__card-title  {
+        color: var(--rr-common-white);
+      }
+
+      .pricing-2__card-price {
+
+        h2 {
+          color: var(--rr-common-white);
+
+          span {
+
+            &:last-child {
+              color: var(--rr-common-white);
+
+            }
+          }
+        }
+      }
+
+      p {
+        color: rgb(255 255 255 / 70%);
+      }
+
+      .pricing-2__card-body {
+        border-top: 1px solid rgb(255 255 255 / 14%);
+
+        ul {
+          li {
+            color: var(--rr-common-white);
+
+            &.color-gary{
+              color: rgb(255 255 255 / 60%);
+            }
+          }
+        }
+      }
+
+      .rr-btn {
+        .btn-wrap {
+
+          .text-one, .text-two {
+
+            color: var(--rr-common-white)
+          }
+        }
+      }
+    }
+
+    img {
+      display: flex;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+
+
+    &-title {
+      color: #1B2A52;
+      margin-bottom: 17px;
+      font-weight: var(--rr-fw-sbold);
+    }
+
+    p {
+      color: var(--rr-heading-primary);
+      font-weight: var(--rr-fw-medium);
+    }
+
+    &-price {
+
+      h2 {
+
+        span {
+
+          &:last-child {
+            font-size: 16px;
+            color: #6A738B;
+            font-weight: var(--rr-fw-medium);
+          }
+        }
+      }
+    }
+
+    &-body {
+      padding-top: 35px;
+      border-top: 1px solid rgb(1 9 21 / 12%);
+
+      ul {
+        list-style: none;
+
+        li {
+          gap: 9px;
+          display: flex;
+          align-items: center;
+          color: var(--rr-heading-primary);
+          font-weight: var(--rr-fw-medium);
+
+          @media #{$lg, $md, $sm, $xs} {
+            align-items: baseline;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+
+          &.color-gary{
+            color: #6A738B;
+          }
+        }
+      }
+    }
+    .rr-btn {
+      width: 100%;
+      background: #F3682D;
+    }
+  }
+}
+.switch-wrapper {
+  position: relative;
+  display: inline-flex;
+  border-radius: 30px;
+  background: var(--rr-common-white);
+  border: 1px solid rgb(1 9 21 / 14%);
+
+  label {
+    z-index: 1;
+    font-size: 16px;
+    opacity: 0.7;
+    cursor: pointer;
+    padding: 4px 22px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 30px;
+    color: var(--rr-heading-primary);
+    font-weight: var(--rr-fw-medium);
+    transition: color 0.25s ease-in-out;
+  }
+
+  .highlighter {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    border-radius: 30px;
+    width: calc(50% - 0px);
+    background: #F3682D;
+    height: calc(100% - 0px);
+    transition: transform 0.25s ease-in-out;
+  }
+}
+
+.switch-wrapper [type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.switch-wrapper [type="radio"]:checked#monthly ~ label[for="monthly"],
+.switch-wrapper [type="radio"]:checked#yearly ~ label[for="yearly"] {
+  color: var(--rr-common-white);
+  opacity: 100%;
+}
+
+.switch-wrapper
+[type="radio"]:checked#monthly
++ label[for="yearly"]
+~ .highlighter {
+  transform: none;
+}
+
+.switch-wrapper
+[type="radio"]:checked#yearly
++ label[for="monthly"]
+~ .highlighter {
+  transform: translateX(100%);
+}

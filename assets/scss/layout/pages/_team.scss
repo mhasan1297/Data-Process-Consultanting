@@ -1,0 +1,145 @@
+@use '../../utils' as *;
+
+.team {
+
+  &__item {
+    overflow: hidden;
+    @include border-radius(10px);
+
+    &-media {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @extend %rr-transition-3;
+      }
+    }
+
+    &-title {
+      margin-bottom: 5px;
+      a:hover{
+        color: var(--rr-color-white);
+      }
+    }
+
+    &-text {
+      text-align: center;
+      background: #E1E7F0;
+      padding: 22.5px 20px;
+      @extend %rr-transition-3;
+    }
+
+    &-subtitle {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      @extend %rr-transition-3;
+      color: rgba(1, 9, 21, 0.8);
+    }
+
+    &-socail {
+      z-index: 2;
+      opacity: 0;
+      right: 0;
+      @extend %rr-transition-3;
+      top: 30px;
+      gap: 8px;
+      position: absolute;
+
+      a {
+        font-size: 14px;
+        width: 40px;
+        height: 40px;
+        background: var(--rr-color-white);
+        color: var(--rr-theme-primary);
+        @include border-radius(500px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          max-width: 14px;
+        }
+
+        &:hover {
+          background: var(--rr-theme-primary);
+          color: var(--rr-common-white);
+
+          img {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .team__item {
+
+        &-socail {
+          right: 30px;
+          opacity: 1;
+        }
+
+        &-text {
+          background: var(--rr-theme-primary);
+        }
+
+        &-title {
+          color: var(--rr-color-white);
+        }
+
+        &-subtitle {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+
+  &__slider-dot {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 0;
+    z-index:1;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      width: 24px;
+      height:24px;
+      padding: 0;
+      margin: 0 !important;
+      @include border-radius(500px);
+      overflow: hidden;
+      background: transparent;
+      display: flex;
+      position: relative;
+      border: 1px solid transparent;
+      @extend %rr-transition-3;
+      opacity: 1;
+
+      &:after {
+        position:absolute;
+        width: 10px;
+        height: 10px;
+        content: "";
+        top: calc(50% - 5px);
+        background: rgba(1, 9, 21, 0.14);
+        @include border-radius(500px);
+        left: calc(50% - 5px);
+      }
+
+      &-active {
+        border-color: var(--rr-theme-primary);
+
+        &:after {
+          background: var(--rr-theme-primary);
+        }
+      }
+    }
+  }
+}

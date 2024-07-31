@@ -1,0 +1,40 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  3.1 header-common
+/*----------------------------------------*/
+.header-2 {
+	top: 0;
+	left: 0;
+	padding: 0;
+	width: 100%;
+	z-index: 1030;
+	position: fixed;
+	background: rgb(255 255 255 / 10%);
+	box-shadow: 0px 1px 10px rgba(29, 29, 29, 0.1);
+
+	&.rr-sticky {
+		top: 0;
+		box-shadow: 0px 1px 10px rgba(29, 29, 29, 0.1);
+		background: var(--rr-common-white);
+	}
+
+	.header {
+
+		&__main {
+
+			.main-menu {
+
+				ul {
+					li {
+						@media (max-width:1199px) {
+							&:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)) {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

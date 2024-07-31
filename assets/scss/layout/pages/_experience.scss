@@ -1,0 +1,85 @@
+@use '../../utils' as *;
+
+.experience {
+
+  &__container {
+    max-width: 1630px;
+  }
+
+  &__box {
+    padding: 65px 209px;
+    @include border-radius(10px);
+    gap: 30px;
+    background-position: 127% 37%;
+    background-repeat: no-repeat;
+
+    @media #{$xl} {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+
+    @media #{$lg} {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    @media #{$md} {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    @media #{$sm} {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @media #{$xs} {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  &__item-text {
+    text-align: center;
+
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 54px;
+      line-height: 60px;
+      font-family: var(--rr-ff-heading);
+
+      span {
+        font-family: var(--rr-ff-heading);
+
+        &.odometer.odometer-auto-theme {
+          margin-right: 5px;
+        }
+      }
+
+      @media #{$lg} {
+        font-size: 52px;
+        line-height:64px;
+      }
+      @media #{$md} {
+        font-size: 50px;
+        line-height:52px;
+      }
+      @media #{$sm} {
+        font-size: 38px;
+        line-height:50px;
+      }
+      @media #{$xs} {
+        font-size: 32px;
+        line-height:44px;
+      }
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.7 breadcrumb
+/*----------------------------------------*/
+
+// Breadcrumb style
+.breadcrumb-space {
+  padding: 105px 0 138px;
+  @media #{$xs, $sm, $md} {
+    padding: 100px 0 125px;
+  }
+  @media #{$xs} {
+    padding: 80px 0 100px;
+  }
+}
+
+.breadcrumb {
+
+  &__area {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+
+    &.overly:after {
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      content: "";
+      height: 100%;
+      position: absolute;
+      background: linear-gradient(90deg, #010F1C 0%, rgba(1, 15, 28, 0.1) 74.44%, rgba(1, 15, 28, 0) 100%), linear-gradient(90deg, #010F1C 0%, rgba(1, 15, 28, 0.1) 74.44%, rgba(1, 15, 28, 0) 100%);
+    }
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center bottom;
+  }
+  &__content {
+    position: relative;
+    z-index: 6;
+  }
+
+
+  &__title {
+    font-weight: var(--rr-fw-bold);
+    margin-bottom: 10px;
+  }
+
+  &__menu {
+    position: relative;
+
+    ul {
+      gap: 32px;
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+
+      li {
+        font-style: normal;
+        font-weight: var(--rr-fw-medium);
+        font-size: 18px;
+        line-height: 25px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: rgb(255 255 255 / 70%);
+
+        &:after {
+          position: absolute;
+          @include transform(translate(12px, 0px));
+          content: "\f105";
+          font-style: normal;
+          font-family: var(--rr-ff-fontawesome);
+          font-weight: 500;
+          font-size: 16px;
+          right: -8px;
+          color: var(--rr-common-white);
+          line-height: 16px;
+        }
+
+        a {
+          gap: 8px;
+          display: flex;
+          align-items: center;
+
+          &:hover {
+            color: var(--rr-theme-primary);
+
+            svg path[stroke="white"]  {
+              stroke: var(--rr-theme-primary);
+            }
+          }
+        }
+
+        &.active {
+          color: var(--rr-common-white);
+          font-weight: var(--rr-fw-sbold);
+
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

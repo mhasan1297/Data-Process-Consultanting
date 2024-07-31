@@ -1,0 +1,72 @@
+@use '../../utils' as *;
+
+.service-details {
+  &__content {
+    padding-right: 30px;
+
+    @media #{$lg, $md, $sm, $xs} {
+      padding-right: 0;
+    }
+
+    &-media {
+      margin-bottom: 30px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include border-radius(16px);
+      }
+    }
+
+    p {
+      color: rgb(1 9 21 / 70%);
+    }
+
+    blockquote {
+      padding-top: 40px;
+      padding-left: 40px;
+      position: relative;
+      padding-right: 74px;
+      margin-bottom: 23px;
+      padding-bottom: 50px;
+      background-color: #D2E0EA;
+      @include border-radius(10px);
+
+      @media #{$xs} {
+        padding: 40px 20px;
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: var(--rr-heading-primary);
+        font-weight: var(--rr-fw-medium);
+      }
+
+      h6 {
+        margin-left: 40px;
+        position: relative;
+        color: var(--rr-theme-primary);
+
+        &::before {
+          left: 0;
+          top: 50%;
+          content: "";
+          width: 30px;
+          height: 2px;
+          position: absolute;
+          transform: translate(-40px, -50%);
+          background-color: var(--rr-theme-primary);
+
+        }
+      }
+
+      span {
+        right: 56px;
+        bottom: 24px;
+        position: absolute;
+      }
+    }
+  }
+}

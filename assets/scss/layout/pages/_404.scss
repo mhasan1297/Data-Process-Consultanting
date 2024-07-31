@@ -1,0 +1,29 @@
+@use '../../utils' as *;
+
+.error__content {
+
+  &-title {
+
+  }
+
+  &-des {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .rr-btn {
+    @include border-radius(10px);
+    padding: 13.5px 37.5px;
+
+    i {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .text-one, .text-two {
+      display: flex;
+    }
+  }
+}
